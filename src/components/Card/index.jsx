@@ -4,7 +4,7 @@ import Image from "next/image";
 export default function Card(){
     return(
         <div
-            className="m-4 rounded border-2 border-rose-400">
+            className="m-4 rounded border-2 border-rose-400 max-w-[387px]">
                 <Image
                     src="/ovo-com-pepino.png"
                     width="387"
