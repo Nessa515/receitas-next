@@ -24,7 +24,7 @@ export default function CardList(){
                 }
             })
                 .then(response => response.json(response))
-                .then(response => console.log(response.data))
+                .then(response => setCards(response.data))
                 .catch(error => console.log(error))
         }
         getData()
@@ -38,9 +38,9 @@ export default function CardList(){
                     <Card
                         key = {c.id}
                         imagem = {c.imagem}
-                        titulo = {c.titulo}
-                        tempo = {c.tempo}
-                        serve = {c.serve}
+                        titulo = {c.Titulo}
+                        tempo = {c.Preparo}
+                        serve = {c.Porcoes}
                     />
                 ))}
             </div>
