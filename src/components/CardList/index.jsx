@@ -32,6 +32,7 @@ export default function CardList(){
                 {cards.map(c => (
                     <Card
                         key = {c.id}
+                        id={c.documentId}
                         imagem = {`${process.env.NEXT_PUBLIC_STRAPI_URL}${c.Capa.formats.thumbnail.url}`}
                         titulo = {c.Titulo}
                         tempo = {c.Preparo}

@@ -1,10 +1,12 @@
 import { Soup, Timer } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 
-export default function Card({ imagem, titulo, tempo, serve }){
+export default function Card({ id, imagem, titulo, tempo, serve }){
     return(
         <div
             className="m-4 rounded border-2 border-rose-400 max-w-[387px]">
+                <Link href={`/receita/${id}`}>
                 <Image
                     src={imagem}
                     width="387"
@@ -19,6 +21,7 @@ export default function Card({ imagem, titulo, tempo, serve }){
             <div className="p-2 text-xs flex items-center gap-1">
                 <Soup /> serve {serve} pessoa(s)
             </div>
+            </Link>
         </div>
     )
 }
