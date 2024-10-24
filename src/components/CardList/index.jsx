@@ -11,7 +11,7 @@ export default function CardList(){
         const bearerToken = process.env.NEXT_PUBLIC_API_TOKEN
 
         async function getData() {
-            await fetch("http://localhost:1337/api/receitas", {
+            await fetch("http://localhost:1337/api/receitas?populate=*", {
                 method: 'GET',
                 headers: {
                     'Authorization': `Bearer ${bearerToken}`,
@@ -32,7 +32,7 @@ export default function CardList(){
                 {cards.map(c => (
                     <Card
                         key = {c.id}
-                        imagem = {c.imagem}
+                        imagem = {`${process.env.NEXT_PUBLIC_STRAPI_URL}${c.Capa.formats.thumbnail.url}`}
                         titulo = {c.Titulo}
                         tempo = {c.Preparo}
                         serve = {c.Porcoes}
